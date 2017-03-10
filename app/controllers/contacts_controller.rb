@@ -13,6 +13,10 @@ class ContactsController < ApplicationController
     render "new_contact.html.erb"
   end
   def add_contact
+    @first_name_added = params["first_name"]
+    @last_name_added = params["last_name"]
+    @email_added = params["email"]
+    @phone_number_added = params["phone_number"]
     render "add_contact.html.erb"
   end
 end
