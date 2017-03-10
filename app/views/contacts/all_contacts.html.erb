@@ -1,0 +1,15 @@
+<h1>Here are all your contacts!</h1>
+  <% @contacts_all.each do |contact| %>
+
+    <h1>Here is your contact:</h1>
+    <p><%= contact.first_name %> <%= contact.last_name %></p>
+
+    <h3>Email:</h3>
+    <p><%= contact.email %></p>
+
+    <h4>Phone Number:</h4>
+    <p><%= contact.phone_number %></p>
+
+  <% end %>
+
+  <a href="/create_new_contact">Create A New Contact</a>
