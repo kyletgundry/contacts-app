@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
 
   def all_contacts
     @contacts_all = Contact.all
+    @contact = Contact.first
     render "all_contacts.html.erb"
   end
 
