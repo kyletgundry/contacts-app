@@ -5,7 +5,7 @@ class Contact < ApplicationRecord
   end
 
   def full_name
-    first_name.upcase + " " + last_name
+    first_name.upcase + " " + middle_name.to_s + " " + last_name
   end
 
 end

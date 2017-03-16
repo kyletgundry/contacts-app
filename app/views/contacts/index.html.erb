@@ -1,0 +1,26 @@
+<h1>Here are all your contacts!</h1>
+
+<a href="/contacts/new">Create A New Contact</a>
+
+  <% @contacts_all.each do |contact| %>
+
+    <h1>Here is your contact:</h1>
+    <p><a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></p>
+
+    <h3>Email:</h3>
+    <p><%= contact.email %></p>
+
+    <h4>Phone Number:</h4>
+    <p><%= contact.phone_number %></p>
+
+    <h4>Last Updated:</h4>
+    <p><%= contact.updated_time %></p>
+
+      <%= form_tag "/contacts/#{@contact.id}", method: :delete do %>
+      <input type="submit" value="Delete Product">
+      <% end %>
+  <p></p>
+  <p><a class="btn btn-default" href="/contacts/<%= contact.id %>/edit">Update Contact</a></p>
+  <% end %>
+
+
