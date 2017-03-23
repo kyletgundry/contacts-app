@@ -15,7 +15,9 @@ class ContactsController < ApplicationController
     middle_name: params["middle_name"],
     last_name: params["last_name"],
     email: params["email"],
-    phone_number: params["phone_number"]
+    phone_number: params["phone_number"],
+    bio: params["bio"],
+    user_id: current_user.id
     )
     contact.save
     render "create.html.erb"
