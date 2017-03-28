@@ -1,9 +1,14 @@
 class ContactsController < ApplicationController
 
   def index
-    @contacts_all = Contact.all
-    @contact = Contact.first
-    render "index.html.erb"
+    if current_user
+      # @contacts = Contact.where("user_id = ?", current_user.id)
+      @contacts = current_user.contacts
+      render "index.html.erb"
+    else
+      # flash[:warning] = "You must be logged in to see this page"
+      redirect_to "/login"
+    end
   end
 
   def new
